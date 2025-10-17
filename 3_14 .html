@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>EduSite - Page 1</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+    </head>
+    <body class="bg-light">
+
+        <!-- Navbar -->
+        <nav
+            class="navbar navbar-expand-lg navbar-light bg-danger-subtle border-bottom border-danger">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">EduSite</a>
+                <button class="navbar-toggler" data-bs-toggle="collapse"
+                    data-bs-target="#nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link"
+                                href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="index.html">Courses</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <div class="container mt-4">
+            <div class="p-5 mb-4 bg-warning-subtle rounded-3">
+                <h1 class="display-5 fw-bold">Web Development Courses</h1>
+                <p class="lead">Start your journey with the fundamentals of
+                    frontend and backend development.</p>
+            </div>
+
+            <!-- Course Cards -->
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-danger">
+                        <img
+                            src="https://via.placeholder.com/300x200/ffe4e1/000?text=HTML+CSS"
+                            class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">HTML & CSS</h5>
+                            <span class="badge bg-primary">Beginner</span>
+                            <p class="mt-2">Learn the basics of building
+                                websites.</p>
+                            <button class="btn btn-info btn-sm"
+                                data-bs-toggle="modal" data-bs-target="#c1">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-danger">
+                        <img
+                            src="https://via.placeholder.com/300x200/e6e6fa/000?text=JavaScript"
+                            class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">JavaScript Essentials</h5>
+                            <span class="badge bg-success">Frontend</span>
+                            <p class="mt-2">Understand dynamic web
+                                programming.</p>
+                            <button class="btn btn-info btn-sm"
+                                data-bs-toggle="modal" data-bs-target="#c2">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-danger">
+                        <img
+                            src="https://via.placeholder.com/300x200/fffacd/000?text=React"
+                            class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">React.js</h5>
+                            <span class="badge bg-warning">Popular</span>
+                            <p class="mt-2">Build modern interactive UIs.</p>
+                            <button class="btn btn-info btn-sm"
+                                data-bs-toggle="modal" data-bs-target="#c3">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <!-- Pagination -->
+            <nav aria-label="Courses Page Navigation" class="mt-5">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a
+                            class="page-link bg-danger-subtle text-dark border-danger">Previous</a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link bg-warning text-dark border-danger"
+                            href="index.html">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a
+                            class="page-link bg-danger-subtle text-dark border-danger"
+                            href="page2.html">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a
+                            class="page-link bg-danger-subtle text-dark border-danger"
+                            href="page3.html">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a
+                            class="page-link bg-danger-subtle text-dark border-danger"
+                            href="page2.html">Next</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Footer -->
+            <footer class="bg-warning-subtle text-center py-3 mt-5">
+                <p class="mb-0">&copy; 2023 EduSite</p>
+            </footer>
+
+            <!-- Modal Example -->
+            <div class="modal fade" id="c1" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content border-danger">
+                        <div class="modal-header">
+                            <h5 class="modal-title">HTML & CSS</h5>
+                            <button class="btn-close"
+                                data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Description</h6>
+                            <p>Learn how to structure and style web pages.</p>
+                            <h6>Goals</h6>
+                            <ul>
+                                <li>Understand HTML tags</li>
+                                <li>Style with CSS</li>
+                                <li>Build responsive layouts</li>
+                            </ul>
+                            <h6>Benefits</h6>
+                            <ul>
+                                <li>Foundation of web dev</li>
+                                <li>Prepare for JS and React</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bootstrap JS Bundle -->
+            <script
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+    </html>

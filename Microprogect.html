@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Online Voting & Polling System - Bootstrap 5.3</title>
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="bg-white text-dark">
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <span class="badge bg-secondary me-2 p-2 rounded-1"><i class="bi bi-check2-square fs-5"></i></span>
+        <span class="fw-bold">Online Voting System</span>
+      </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+
+        <form class="d-flex ms-auto me-2" role="search">
+          <input id="searchInput" class="form-control me-2" type="search" placeholder="Search Poll..." aria-label="Search">
+          <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+
+      
+        <div class="d-flex gap-2">
+          <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="bi bi-box-arrow-in-right me-1"></i>Login</button>
+          <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#registerModal"><i class="bi bi-person-plus me-1"></i>Register</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container my-5">
+    <div class="row g-4">
+
+
+      <div class="col-lg-3">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h6 class="fw-semibold">Menu</h6>
+            <div class="list-group list-group-flush">
+              <a class="list-group-item list-group-item-action active" data-bs-toggle="list" href="#dashboard" role="tab">Dashboard</a>
+              <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#createPoll" role="tab">Create Poll</a>
+              <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#managePolls" role="tab">Manage Polls</a>
+              <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#results" role="tab">Results (Example)</a>
+              <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#voters" role="tab">Registered Voters</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Content panes -->
+      <div class="col-lg-9">
+        <div class="card shadow-sm">
+          <div class="card-body">
+
+            <div class="tab-content">
+
+          =
+              <div class="tab-pane fade show active" id="dashboard" role="tabpanel">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h5 class="mb-0">Available Polls</h5>
+                  <small class="text-muted">White & Gray theme</small>
+                </div>
+
+              
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                      <tr>
+                        <th>#</th>
+                        <th>Poll Title</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Options</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    
+                      <tr>
+                        <td>1</td>
+                        <td>Best Programming Language</td>
+                        <td>2025-10-01</td>
+                        <td>2025-10-20</td>
+                        <td>
+                          <ul class="list-unstyled mb-0 small">
+                            <li>• Python</li>
+                            <li>• JavaScript</li>
+                            <li>• Java</li>
+                            <li>• C++</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <div class="btn-group" role="group">
+                            <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#voteModal"><i class="bi bi-hand-thumbs-up me-1"></i>Vote</button>
+                            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#updatePollModal"><i class="bi bi-pencil me-1"></i>Update</button>
+                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash me-1"></i>Delete</button>
+                          </div>
+                        </td>
+                      </tr>
+
+             
+                      <tr>
+                        <td>2</td>
+                        <td>Favorite Frontend Framework</td>
+                        <td>2025-10-05</td>
+                        <td>2025-10-30</td>
+                        <td>
+                          <ul class="list-unstyled mb-0 small">
+                            <li>• React</li>
+                            <li>• Angular</li>
+                            <li>• Vue</li>
+                            <li>• Svelte</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <div class="btn-group" role="group">
+                            <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#voteModal"><i class="bi bi-hand-thumbs-up me-1"></i>Vote</button>
+                            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#updatePollModal"><i class="bi bi-pencil me-1"></i>Update</button>
+                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash me-1"></i>Delete</button>
+                          </div>
+                        </td>
+                      </tr>
+
+                    
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="mt-4">
+                  <h6 class="mb-2">Quick Controls</h6>
+                  <div class="d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#createPollModal"><i class="bi bi-plus-circle me-1"></i>Create Poll</button>
+                    <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-filter-circle me-1"></i>Filter (UI only)</button>
+                    <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-arrow-repeat me-1"></i>Refresh (UI only)</button>
+                  </div>
+                </div>
+              </div>
+
+             
+              <div class="tab-pane fade" id="createPoll" role="tabpanel">
+                <h5>Create New Poll</h5>
+                <p class="text-muted small">Fill poll title, options, start and end dates. This is a UI form — needs backend to save.</p>
+
+                <form class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label">Poll Title</label>
+                    <input type="text" class="form-control" placeholder="Enter poll title" required>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">Option 1</label>
+                    <input type="text" class="form-control" placeholder="Option 1" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Option 2</label>
+                    <input type="text" class="form-control" placeholder="Option 2" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Option 3</label>
+                    <input type="text" class="form-control" placeholder="Option 3 (optional)">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Option 4</label>
+                    <input type="text" class="form-control" placeholder="Option 4 (optional)">
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">Start Date</label>
+                    <input type="date" class="form-control">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">End Date</label>
+                    <input type="date" class="form-control">
+                  </div>
+
+                  <div class="col-12">
+                    <button type="button" class="btn btn-secondary"><i class="bi bi-plus-circle me-1"></i>Create Poll (UI)</button>
+                    <small class="text-muted ms-2">*Backend required to actually create and list the poll.</small>
+                  </div>
+                </form>
+              </div>
+
+              
+              <div class="tab-pane fade" id="managePolls" role="tabpanel">
+                <h5>Manage Polls</h5>
+                <p class="text-muted small">Update, insert or delete polls (UI only)</p>
+
+                <div class="table-responsive">
+                  <table class="table table-bordered align-middle">
+                    <thead class="table-light">
+                      <tr>
+                        <th style="width:70px">#</th>
+                        <th>Poll Title</th>
+                        <th>Period</th>
+                        <th style="width:230px">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Best Programming Language</td>
+                        <td>2025-10-01 → 2025-10-20</td>
+                        <td>
+                          <div class="d-flex gap-2">
+                            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#updatePollModal"><i class="bi bi-pencil"></i> Edit</button>
+                            <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Delete</button>
+                            <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#viewResultsModal"><i class="bi bi-bar-chart"></i> Results</button>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>2</td>
+                        <td>Favorite Frontend Framework</td>
+                        <td>2025-10-05 → 2025-10-30</td>
+                        <td>
+                          <div class="d-flex gap-2">
+                            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#updatePollModal"><i class="bi bi-pencil"></i> Edit</button>
+                            <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Delete</button>
+                            <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#viewResultsModal"><i class="bi bi-bar-chart"></i> Results</button>
+                          </div>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="mt-3">
+                  <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#createPollModal"><i class="bi bi-plus-circle me-1"></i>Insert New Poll</button>
+                  <small class="text-muted ms-2">*Buttons open UI modals (static).</small>
+                </div>
+              </div>
+
+              <!-- RESULTS (example) -->
+              <div class="tab-pane fade" id="results" role="tabpanel">
+                <h5>Poll Results (Example)</h5>
+                <p class="text-muted small">Sample results displayed using Bootstrap progress bars and utilities.</p>
+
+                <div class="mb-4">
+                  <h6 class="mb-1">Best Programming Language</h6>
+                  <div class="d-flex justify-content-between mb-1 small text-muted">
+                    <div>Python</div>
+                    <div>45%</div>
+                  </div>
+                  <div class="progress mb-2" style="height:24px;">
+                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 45%;">Python (45%)</div>
+                  </div>
+
+                  <div class="d-flex justify-content-between mb-1 small text-muted">
+                    <div>JavaScript</div>
+                    <div>30%</div>
+                  </div>
+                  <div class="progress mb-2" style="height:24px;">
+                    <div class="progress-bar bg-light text-dark" role="progressbar" style="width: 30%;">JavaScript (30%)</div>
+                  </div>
+
+                  <div class="d-flex justify-content-between mb-1 small text-muted">
+                    <div>Java</div>
+                    <div>15%</div>
+                  </div>
+                  <div class="progress mb-2" style="height:24px;">
+                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 15%;">Java (15%)</div>
+                  </div>
+
+                  <div class="d-flex justify-content-between mb-1 small text-muted">
+                    <div>C++</div>
+                    <div>10%</div>
+                  </div>
+                  <div class="progress" style="height:24px;">
+                    <div class="progress-bar bg-light text-dark" role="progressbar" style="width: 10%;">C++ (10%)</div>
+                  </div>
+                </div>
+              </div>
+
+       
+              <div class="tab-pane fade" id="voters" role="tabpanel">
+                <h5>Registered Voters</h5>
+                <p class="text-muted small">List of voters (UI only).</p>
+                <ul class="list-group">
+                  <li class="list-group-item">Naitik Jethi <small class="text-muted ms-2">— naitik@example.com</small></li>
+                  <li class="list-group-item">Aarav Patel <small class="text-muted ms-2">— aarav@example.com</small></li>
+                  <li class="list-group-item">Priya Shah <small class="text-muted ms-2">— priya@example.com</small></li>
+                  <li class="list-group-item">Karan Mehta <small class="text-muted ms-2">— karan@example.com</small></li>
+                </ul>
+
+                <div class="mt-3">
+                  <button class="btn btn-secondary btn-sm"><i class="bi bi-person-plus me-1"></i>Register New Voter (UI)</button>
+                </div>
+              </div>
+
+            </div>
+
+          </div> 
+        </div> 
+      </div> 
+
+    </div> 
+  </div> 
+
+  <footer class="bg-light border-top py-3">
+    <div class="container-fluid p-0">
+      <div class="position-relative">
+        <img src="https://caltechsites-prod-assets.s3.amazonaws.com/scienceexchange/images/Vote_redblue2_LoRes_sttntNm.2e16d0ba.fill-1600x500-c100.jpg" alt="Voting banner" class="img-fluid w-100" style="height:180px; object-fit:cover;">
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white" style="text-shadow: 0 2px 6px rgba(0,0,0,.7);">
+          <h5 class="fw-bold mb-0 fw-bold text-shadow text-primary">Online Voting System</h5>
+          <small class="d-block fw-bold text-shadow text-danger">Secure · Transparent · Accessible</small>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid bg-black text-center py-2">
+      <small class="fw-bold text-shadow text-white" style="text-shadow: 0 2px 6px rgba(0,0,0,.6);">© 2025 Online Voting System — White & Gray Theme</small>
+    </div>
+  </footer>
+
+
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-light">
+          <h6 class="modal-title"><i class="bi bi-box-arrow-in-right me-2"></i>Login</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">Email ID</label>
+              <input type="email" class="form-control" placeholder="you@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <div class="form-text small text-muted">This login is UI-only. Connect to backend to authenticate users.</div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-light">
+          <h6 class="modal-title"><i class="bi bi-person-plus me-2"></i>Register Voter</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" placeholder="Your name" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email ID</label>
+              <input type="email" class="form-control" placeholder="you@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <div class="form-text small text-muted">Registered voter details would be stored in backend.</div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-secondary">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="voteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-light">
+          <h6 class="modal-title"><i class="bi bi-hand-thumbs-up me-2"></i>Cast Your Vote</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <form>
+          <div class="modal-body">
+            <h6 class="mb-3">Best Programming Language</h6>
+
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="voteOption" id="optPython">
+              <label class="form-check-label" for="optPython">Python</label>
+            </div>
+
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="voteOption" id="optJS">
+              <label class="form-check-label" for="optJS">JavaScript</label>
+            </div>
+
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="voteOption" id="optJava">
+              <label class="form-check-label" for="optJava">Java</label>
+            </div>
+
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="voteOption" id="optCPP">
+              <label class="form-check-label" for="optCPP">C++</label>
+            </div>
+
+            <div class="form-text small text-muted">Selecting vote here is UI-only. Voting needs backend to record.</div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-success">Submit Vote</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="modal fade" id="createPollModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-light">
+          <h6 class="modal-title"><i class="bi bi-plus-circle me-2"></i>Create Poll</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <form>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-12">
+                <label class="form-label">Poll Title</label>
+                <input type="text" class="form-control" placeholder="Title" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Option 1</label>
+                <input type="text" class="form-control" placeholder="Option 1" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Option 2</label>
+                <input type="text" class="form-control" placeholder="Option 2" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Option 3</label>
+                <input type="text" class="form-control" placeholder="Option 3">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Option 4</label>
+                <input type="text" class="form-control" placeholder="Option 4">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Start Date</label>
+                <input type="date" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">End Date</label>
+                <input type="date" class="form-control">
+              </div>
+            </div>
+            <div class="form-text small text-muted mt-2">Form is UI-only. Backend integration required to save the poll.</div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-secondary">Create Poll</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="updatePollModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-light">
+          <h6 class="modal-title"><i class="bi bi-pencil me-2"></i>Update Poll</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <form>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-12">
+                <label class="form-label">Poll Title</label>
+                <input type="text" class="form-control" value="Best Programming Language" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Option 1</label>
+                <input type="text" class="form-control" value="Python" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Option 2</label>
+                <input type="text" class="form-control" value="JavaScript" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Option 3</label>
+                <input type="text" class="form-control" value="Java">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Option 4</label>
+                <input type="text" class="form-control" value="C++">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Start Date</label>
+                <input type="date" class="form-control" value="2025-10-01">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">End Date</label>
+                <input type="date" class="form-control" value="2025-10-20">
+              </div>
+            </div>
+            <div class="form-text small text-muted mt-2">Updating requires backend to persist changes.</div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-outline-secondary">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="viewResultsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-light">
+          <h6 class="modal-title"><i class="bi bi-bar-chart me-2"></i>Poll Results</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <h6>Best Programming Language — Results</h6>
+
+          <div class="mb-3 small text-muted d-flex justify-content-between">
+            <div>Python</div>
+            <div>45%</div>
+          </div>
+          <div class="progress mb-3" style="height:22px;">
+            <div class="progress-bar bg-secondary" style="width:45%">Python (45%)</div>
+          </div>
+
+          <div class="mb-3 small text-muted d-flex justify-content-between">
+            <div>JavaScript</div>
+            <div>30%</div>
+          </div>
+          <div class="progress mb-3" style="height:22px;">
+            <div class="progress-bar bg-light text-dark" style="width:30%">JavaScript (30%)</div>
+          </div>
+
+          <div class="mb-3 small text-muted d-flex justify-content-between">
+            <div>Java</div>
+            <div>15%</div>
+          </div>
+          <div class="progress mb-3" style="height:22px;">
+            <div class="progress-bar bg-secondary" style="width:15%">Java (15%)</div>
+          </div>
+
+          <div class="mb-3 small text-muted d-flex justify-content-between">
+            <div>C++</div>
+            <div>10%</div>
+          </div>
+          <div class="progress" style="height:22px;">
+            <div class="progress-bar bg-light text-dark" style="width:10%">C++ (10%)</div>
+          </div>
+
+          <div class="form-text small text-muted mt-2">These are example values. Replace with dynamic values from backend.</div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

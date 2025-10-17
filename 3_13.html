@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Championship - Global Football Tournament</title>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-light">
+
+    <!-- 1. RESPONSIVE NAVBAR FIXED TO TOP (Header) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-lg z-3">
+        <div class="container-fluid">
+            <!-- Logo/Brand Section -->
+            <a class="navbar-brand fw-bold fs-4" href="#home">
+                <i class="bi bi-trophy-fill me-2 text-warning fs-3"></i> Champion Global
+            </a>
+            
+            <!-- Offcanvas Toggle Button (visible on mobile/tablet) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Main Navbar Content (Collapses on small screen) -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#standings">Standings</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <!-- Dropdown Menu -->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Media Coverage
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark rounded-3 shadow">
+                            <li><a class="dropdown-item" href="#highlights"><i class="bi bi-camera-video me-2"></i> Match Highlights</a></li>
+                            <li><a class="dropdown-item" href="#news"><i class="bi bi-newspaper me-2"></i> Latest News</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#players"><i class="bi bi-star me-2"></i> Player Stats</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#schedule">Schedule</a>
+                    </li>
+                </ul>
+                
+                <!-- Search Form (Input Element) -->
+                <form class="d-flex me-3" role="search">
+                    <div class="input-group">
+                        <input class="form-control form-control-sm rounded-start-pill bg-dark text-white border-secondary" type="search" placeholder="Search team or player..." aria-label="Search">
+                        <button class="btn btn-warning btn-sm rounded-end-pill px-3" type="submit"><i class="bi bi-search"></i></button>
+                    </div>
+                </form>
+
+                <!-- Sign-up Button (Input Element) -->
+                <button class="btn btn-outline-light btn-sm fw-bold rounded-pill px-3" type="button" data-bs-toggle="modal" data-bs-target="#signUpModal">
+                    <i class="bi bi-person-add me-1"></i> Sign Up
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offcanvas Menu Content (Sidebar for mobile navigation) -->
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel"><i class="bi bi-trophy-fill me-2 text-warning"></i> Championship Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item"><a class="nav-link active p-3" data-bs-dismiss="offcanvas" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link p-3" data-bs-dismiss="offcanvas" href="#standings">League Standings</a></li>
+                <li class="nav-item"><a class="nav-link p-3" data-bs-dismiss="offcanvas" href="#highlights">Match Highlights</a></li>
+                <li class="nav-item"><a class="nav-link p-3" data-bs-dismiss="offcanvas" href="#news">Latest News</a></li>
+                <li class="nav-item"><a class="nav-link p-3" data-bs-dismiss="offcanvas" href="#players">Featured Players</a></li>
+                <!-- Mobile Sign-up Button -->
+                <li class="nav-item mt-3">
+                    <button class="btn btn-warning text-dark fw-bold rounded-pill w-100" data-bs-toggle="modal" data-bs-target="#signUpModal" data-bs-dismiss="offcanvas">
+                        <i class="bi bi-person-add me-1"></i> Sign Up Now
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Sign Up Modal (Form Input Example) -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 shadow-lg border-0">
+                <div class="modal-header bg-primary text-white rounded-top-4">
+                    <h5 class="modal-title fw-bold" id="signUpModalLabel">Join the Global Fan Club!</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form>
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label fw-semibold">Email address</label>
+                            <input type="email" class="form-control rounded-pill" id="emailInput" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordInput" class="form-label fw-semibold">Password</label>
+                            <input type="password" class="form-control rounded-pill" id="passwordInput" placeholder="********" required>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="" id="newsletterCheck">
+                            <label class="form-check-label small" for="newsletterCheck">
+                                Subscribe to our weekly match updates.
+                            </label>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-warning fw-bold rounded-pill"><i class="bi bi-check-circle me-1"></i> Register Account</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT AREA - Padding Top (pt-5) ensures content is pushed down from fixed navbar -->
+    <main class="pt-5" data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+
+        <!-- 2. HERO SECTION -->
+        <section id="home" class="bg-primary text-white py-5 text-center">
+            <div class="container">
+                <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner rounded-4 shadow-lg">
+                        
+                        <!-- Slide 1: Main Announcement -->
+                        <div class="carousel-item active bg-dark text-white p-5 d-flex align-items-center justify-content-center" style="min-height: 300px;">
+                            <div class="carousel-caption d-block position-relative pb-0">
+                                <h1 class="display-4 fw-bolder">THE CHAMPIONSHIP 2024</h1>
+                                <p class="lead fw-light">The Final Four teams are set! **Lions, Vipers, Jaguars, and Dragons** advance to the semi-finals.</p>
+                                <a href="#schedule" class="btn btn-warning btn-lg mt-3 fw-bold mx-auto rounded-pill px-5">View Semi-Final Schedule</a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Match Highlight -->
+                        <div class="carousel-item bg-success text-white p-5 d-flex align-items-center justify-content-center" style="min-height: 300px;">
+                            <div class="carousel-caption d-block position-relative pb-0">
+                                <h2 class="fw-bolder display-5">Match of the Week: Vipers vs. Lions</h2>
+                                <p class="fs-5">Vipers secure a stunning 3-2 victory in injury time. See the highlights now!</p>
+                                <a href="#highlights" class="btn btn-outline-light btn-lg mt-3 fw-bold mx-auto rounded-pill px-5">Watch Highlights</a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: Player Feature -->
+                        <div class="carousel-item bg-warning text-dark p-5 d-flex align-items-center justify-content-center" style="min-height: 300px;">
+                            <div class="carousel-caption d-block position-relative pb-0">
+                                <h2 class="fw-bolder display-5">Golden Boot Race Heats Up!</h2>
+                                <p class="fs-5 text-dark fw-semibold">Adriano Silva (Lions) leads with 18 goals, closely followed by Kim Min-ho (Jaguars) at 16.</p>
+                                <a href="#players" class="btn btn-outline-dark btn-lg mt-3 fw-bold mx-auto rounded-pill px-5">View Full Stats</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. LEAGUE STANDINGS SECTION -->
+        <section id="standings" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="fw-bold mb-4 text-center text-primary">🏆 Final Group Standings</h2>
+                
+                <!-- Tabbed Navigation for Groups -->
+                <ul class="nav nav-pills justify-content-center mb-4" id="standingsTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active rounded-pill px-4 me-2" id="group-a-tab" data-bs-toggle="tab" data-bs-target="#group-a" type="button" role="tab" aria-controls="group-a" aria-selected="true">Group A</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill px-4" id="group-b-tab" data-bs-toggle="tab" data-bs-target="#group-b" type="button" role="tab" aria-controls="group-b" aria-selected="false">Group B</button>
+                    </li>
+                </ul>
+
+                <!-- Tab Content -->
+                <div class="tab-content" id="standingsTabContent">
+                    
+                    <!-- Group A Table -->
+                    <div class="tab-pane fade show active" id="group-a" role="tabpanel" aria-labelledby="group-a-tab">
+                        <div class="table-responsive rounded-4 shadow-sm">
+                            <table class="table table-hover table-striped align-middle bg-white caption-top">
+                                <caption class="fw-bold text-dark fs-5 text-center p-3 border-bottom rounded-top-4 bg-white"><i class="bi bi-check-circle-fill text-success me-2"></i> Lions FC & Vipers United Qualified</caption>
+                                <thead class="table-primary text-uppercase">
+                                    <tr>
+                                        <th scope="col" class="text-center">#</th>
+                                        <th scope="col">Team</th>
+                                        <th scope="col" class="text-center d-none d-md-table-cell">Played</th>
+                                        <th scope="col" class="text-center">W</th>
+                                        <th scope="col" class="text-center">D</th>
+                                        <th scope="col" class="text-center">L</th>
+                                        <th scope="col" class="text-center d-none d-md-table-cell">GD</th>
+                                        <th scope="col" class="text-center">Pts</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-group-divider">
+                                    <tr class="table-success fw-bold">
+                                        <th scope="row" class="text-center">1</th>
+                                        <td><i class="bi bi-caret-up-fill text-success me-2"></i> Lions FC</td>
+                                        <td class="text-center d-none d-md-table-cell">6</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center d-none d-md-table-cell">+12</td>
+                                        <td class="text-center">16</td>
+                                    </tr>
+                                    <tr class="table-success">
+                                        <th scope="row" class="text-center">2</th>
+                                        <td><i class="bi bi-caret-up-fill text-success me-2"></i> Vipers United</td>
+                                        <td class="text-center d-none d-md-table-cell">6</td>
+                                        <td class="text-center">4</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center d-none d-md-table-cell">+8</td>
+                                        <td class="text-center">13</td>
+                                    </tr>
+                                    <tr class="table-danger">
+                                        <th scope="row" class="text-center">3</th>
+                                        <td><i class="bi bi-x-circle-fill text-danger me-2"></i> Falcons SC</td>
+                                        <td class="text-center d-none d-md-table-cell">6</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">3</td>
+                                        <td class="text-center d-none d-md-table-cell">-5</td>
+                                        <td class="text-center">5</td>
+                                    </tr>
+                                    <tr class="table-danger">
+                                        <th scope="row" class="text-center">4</th>
+                                        <td><i class="bi bi-x-circle-fill text-danger me-2"></i> Wolves Athletic</td>
+                                        <td class="text-center d-none d-md-table-cell">6</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center">6</td>
+                                        <td class="text-center d-none d-md-table-cell">-15</td>
+                                        <td class="text-center">0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Group B Table -->
+                    <div class="tab-pane fade" id="group-b" role="tabpanel" aria-labelledby="group-b-tab">
+                         <div class="table-responsive rounded-4 shadow-sm">
+                            <table class="table table-hover table-striped align-middle bg-white caption-top">
+                                <caption class="fw-bold text-dark fs-5 text-center p-3 border-bottom rounded-top-4 bg-white"><i class="bi bi-check-circle-fill text-success me-2"></i> Jaguars United & Dragons FC Qualified</caption>
+                                <thead class="table-info text-uppercase">
+                                    <tr>
+                                        <th scope="col" class="text-center">#</th>
+                                        <th scope="col">Team</th>
+                                        <th scope="col" class="text-center d-none d-md-table-cell">Played</th>
+                                        <th scope="col" class="text-center">W</th>
+                                        <th scope="col" class="text-center">D</th>
+                                        <th scope="col" class="text-center">L</th>
+                                        <th scope="col" class="text-center d-none d-md-table-cell">GD</th>
+                                        <th scope="col" class="text-center">Pts</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-group-divider">
+                                    <tr class="table-success fw-bold">
+                                        <th scope="row" class="text-center">1</th>
+                                        <td><i class="bi bi-caret-up-fill text-success me-2"></i> Jaguars United</td>
+                                        <td class="text-center d-none d-md-table-cell">6</td>
+                                        <td class="text-center">4</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center d-none d-md-table-cell">+10</td>
+                                        <td class="text-center">14</td>
+                                    </tr>
+                                    <tr class="table-success">
+                                        <th scope="row" class="text-center">2</th>
+                                        <td><i class="bi bi-caret-up-fill text-success me-2"></i> Dragons FC</td>
+                                        <td class="text-center d-none d-md-table-cell">6</td>
+                                        <td class="text-center">3</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center d-none d-md-table-cell">+4</td>
+                                        <td class="text-center">11</td>
+                                    </tr>
+                                    <tr class="table-danger">
+                                        <th scope="row" class="text-center">3</th>
+                                        <td><i class="bi bi-x-circle-fill text-danger me-2"></i> Eagles XI</td>
+                                        <td class="text-center d-none d-md-table-cell">6</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">3</td>
+                                        <td class="text-center d-none d-md-table-cell">-2</td>
+                                        <td class="text-center">7</td>
+                                    </tr>
+                                    <tr class="table-danger">
+                                        <th scope="row" class="text-center">4</th>
+                                        <td><i class="bi bi-x-circle-fill text-danger me-2"></i> Sharks City</td>
+                                        <td class="text-center d-none d-md-table-cell">6</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center d-none d-md-table-cell">-12</td>
+                                        <td class="text-center">1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 4. MATCH SCHEDULE SECTION (More detail added) -->
+        <section id="schedule" class="py-5 bg-white">
+            <div class="container">
+                <h2 class="fw-bold mb-4 text-center text-primary">🗓 Upcoming Knockout Schedule</h2>
+                
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    
+                    <!-- Semi Final 1 Card -->
+                    <div class="col">
+                        <div class="card h-100 shadow-lg border-0 rounded-4">
+                            <div class="card-header bg-danger text-white fw-bold fs-5 rounded-top-4 d-flex justify-content-between">
+                                Semi Final 1 <span class="badge bg-light text-danger">LIVE ON TV</span>
+                            </div>
+                            <div class="card-body text-center p-4">
+                                <p class="text-muted mb-1 fw-semibold">Saturday, Oct 20 | 19:00 UTC</p>
+                                <div class="d-flex justify-content-center align-items-center my-3">
+                                    <h3 class="fw-bolder text-dark mb-0">Lions FC</h3>
+                                    <img src="https://placehold.co/40x40/007bff/ffffff?text=L" class="rounded-circle mx-3 border border-3 border-primary" alt="Lions FC Logo">
+                                    <h4 class="text-danger mb-0 mx-2">VS</h4>
+                                    <img src="https://placehold.co/40x40/198754/ffffff?text=D" class="rounded-circle mx-3 border border-3 border-success" alt="Dragons FC Logo">
+                                    <h3 class="fw-bolder text-dark mb-0">Dragons FC</h3>
+                                </div>
+                                <p class="card-text text-secondary mb-3"><i class="bi bi-geo-alt-fill me-1"></i> National Stadium, Block A</p>
+                                <a href="#" class="btn btn-danger fw-bold rounded-pill w-100"><i class="bi bi-ticket-fill me-2"></i> Buy Tickets</a>
+                            </div>
+                            <div class="card-footer text-center text-muted rounded-bottom-4">
+                                Key Matchup: Silva (Lions) vs. Kwong (Dragons)
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Semi Final 2 Card -->
+                    <div class="col">
+                        <div class="card h-100 shadow-lg border-0 rounded-4">
+                            <div class="card-header bg-warning text-dark fw-bold fs-5 rounded-top-4 d-flex justify-content-between">
+                                Semi Final 2 <span class="badge bg-dark text-warning">RIVALRY MATCH</span>
+                            </div>
+                            <div class="card-body text-center p-4">
+                                <p class="text-muted mb-1 fw-semibold">Sunday, Oct 21 | 16:30 UTC</p>
+                                <div class="d-flex justify-content-center align-items-center my-3">
+                                    <h3 class="fw-bolder text-dark mb-0">Jaguars U.</h3>
+                                    <img src="https://placehold.co/40x40/dc3545/ffffff?text=J" class="rounded-circle mx-3 border border-3 border-danger" alt="Jaguars United Logo">
+                                    <h4 class="text-warning mb-0 mx-2">VS</h4>
+                                    <img src="https://placehold.co/40x40/ffc107/000000?text=V" class="rounded-circle mx-3 border border-3 border-warning" alt="Vipers United Logo">
+                                    <h3 class="fw-bolder text-dark mb-0">Vipers U.</h3>
+                                </div>
+                                <p class="card-text text-secondary mb-3"><i class="bi bi-geo-alt-fill me-1"></i> City Arena, Field 2</p>
+                                <a href="#" class="btn btn-warning fw-bold rounded-pill w-100"><i class="bi bi-broadcast-pin me-2"></i> Watch Live Stream</a>
+                            </div>
+                            <div class="card-footer text-center text-muted rounded-bottom-4">
+                                Vipers lead the head-to-head 2-1 this season.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grand Final Card -->
+                    <div class="col">
+                        <div class="card h-100 shadow-lg border-0 rounded-4">
+                            <div class="card-header bg-dark text-white fw-bold fs-5 rounded-top-4 d-flex justify-content-between">
+                                Grand Final <span class="badge bg-warning text-dark">CHAMPIONSHIP</span>
+                            </div>
+                            <div class="card-body text-center p-4">
+                                <p class="text-muted mb-1 fw-semibold">Wednesday, Oct 27 | 20:00 UTC</p>
+                                <div class="d-flex justify-content-center align-items-center my-3">
+                                    <h3 class="fw-bolder text-dark mb-0">Winner SF1</h3>
+                                    <i class="bi bi-trophy-fill text-warning fs-3 mx-3"></i>
+                                    <h4 class="text-dark mb-0 mx-2">VS</h4>
+                                    <i class="bi bi-trophy-fill text-warning fs-3 mx-3"></i>
+                                    <h3 class="fw-bolder text-dark mb-0">Winner SF2</h3>
+                                </div>
+                                <p class="card-text text-secondary mb-3"><i class="bi bi-geo-alt-fill me-1"></i> Grand Finale Stadium, Central Pitch</p>
+                                <a href="#" class="btn btn-outline-dark fw-bold rounded-pill w-100"><i class="bi bi-bell-fill me-2"></i> Get Ticket Notifications</a>
+                            </div>
+                            <div class="card-footer text-center text-muted rounded-bottom-4">
+                                The battle for the Golden Cup!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. MATCH HIGHLIGHTS SECTION (New) -->
+        <section id="highlights" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="fw-bold mb-4 text-center text-primary">🎥 Match Highlights & Replays</h2>
+                
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    
+                    <!-- Highlight 1 Card -->
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0 rounded-4">
+                            <div class="ratio ratio-16x9 rounded-top-4 bg-dark">
+                                <!-- Placeholder for an embedded video, styled for 16:9 aspect ratio -->
+                                <div class="d-flex align-items-center justify-content-center flex-column text-white">
+                                    <i class="bi bi-play-circle-fill fs-1 text-danger"></i>
+                                    <p class="mt-2 mb-0">Video Placeholder: Lions 2-3 Vipers</p>
+                                </div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="card-title fw-bold text-dark">Lions FC vs Vipers United | Full Match Replay</h5>
+                                <p class="card-text small text-muted mb-2">Quarter Final 3 | Oct 15, 2024</p>
+                                <p class="card-text">A five-goal thriller decided in the 92nd minute! Vipers United fought back from two goals down to secure their semi-final spot in dramatic fashion.</p>
+                                <a href="#" class="btn btn-sm btn-outline-primary rounded-pill mt-2"><i class="bi bi-forward-fill me-1"></i> Watch Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Highlight 2 Card -->
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0 rounded-4">
+                            <div class="ratio ratio-16x9 rounded-top-4 bg-dark">
+                                <!-- Placeholder for an embedded video, styled for 16:9 aspect ratio -->
+                                <div class="d-flex align-items-center justify-content-center flex-column text-white">
+                                    <i class="bi bi-play-circle-fill fs-1 text-danger"></i>
+                                    <p class="mt-2 mb-0">Video Placeholder: Top 5 Goals of Group Stage</p>
+                                </div>
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="card-title fw-bold text-dark">Top 5 Goals of the Group Stage</h5>
+                                <p class="card-text small text-muted mb-2">Compilation | Weekly Feature</p>
+                                <p class="card-text">We compile the most spectacular goals, including Kim Min-ho's stunning free kick against Eagles XI and the Wolves Athletic's rare moment of magic.</p>
+                                <a href="#" class="btn btn-sm btn-outline-primary rounded-pill mt-2"><i class="bi bi-star-fill me-1"></i> See the Spectacle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. LATEST NEWS SECTION (New) -->
+        <section id="news" class="py-5 bg-white">
+            <div class="container">
+                <h2 class="fw-bold mb-4 text-center text-primary">📰 Championship News Feed</h2>
+                
+                <div class="list-group rounded-4 shadow-lg">
+                    
+                    <!-- News Item 1 -->
+                    <a href="#" class="list-group-item list-group-item-action py-3 rounded-top-4">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1 fw-bold text-dark">Jaguars' Coach Slams Media After Close Call</h5>
+                            <small class="text-muted">3 hours ago</small>
+                        </div>
+                        <p class="mb-1">Coach Ramos expressed frustration over what he called "unnecessary pressure" on his team following their narrow 1-0 victory against Dragons FC, securing their top spot in Group B.</p>
+                        <small class="badge bg-danger text-uppercase">Team Talk</small>
+                    </a>
+
+                    <!-- News Item 2 -->
+                    <a href="#" class="list-group-item list-group-item-action py-3">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1 fw-bold text-dark">Injury Scare for Lions Star Midfielder, Al-Hamad</h5>
+                            <small class="text-muted">Yesterday</small>
+                        </div>
+                        <p class="mb-1">Sources indicate that Lions FC midfielder Omar Al-Hamad sustained a minor hamstring strain and is doubtful for the upcoming Semi Final 1 clash against Dragons FC. The team remains optimistic.</p>
+                        <small class="badge bg-warning text-dark text-uppercase">Injury Update</small>
+                    </a>
+
+                    <!-- News Item 3 -->
+                    <a href="#" class="list-group-item list-group-item-action py-3 rounded-bottom-4">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1 fw-bold text-dark">New Global Stadium Confirmed for Next Season's Final</h5>
+                            <small class="text-muted">2 days ago</small>
+                        </div>
+                        <p class="mb-1">The Championship committee officially announced that the 2025 Grand Final will be held at the newly constructed Olympus Arena, capable of holding 100,000 spectators.</p>
+                        <small class="badge bg-primary text-uppercase">Future</small>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FEATURED PLAYER SECTION -->
+        <section id="players" class="py-5 bg-light border-top">
+            <div class="container">
+                <h2 class="fw-bold mb-4 text-center text-primary">⭐ Featured Player: Adriano Silva</h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                            <div class="row g-0">
+                                <!-- Player Image/Detail Column -->
+                                <div class="col-md-5 bg-dark text-white p-4 d-flex flex-column align-items-center justify-content-center text-center rounded-start-4">
+                                    <img src="https://placehold.co/150x150/ffc107/000000?text=A+S" class="img-fluid rounded-circle border border-4 border-warning mb-3" alt="Player C">
+                                    <h4 class="card-title fw-bolder mb-0 text-warning">ADRIANO "THE EAGLE" SILVA</h4>
+                                    <p class="text-uppercase fw-semibold mb-0">Forward | Lions FC</p>
+                                    <span class="badge bg-warning text-dark fs-6 mt-2 rounded-pill p-2">#10</span>
+                                </div>
+                                
+                                <!-- Player Stats Column -->
+                                <div class="col-md-7 p-4">
+                                    <h5 class="fw-bold text-dark mb-4">Season Performance (10 Matches)</h5>
+
+                                    <!-- Stat 1: Goals -->
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span class="fw-semibold text-dark">Goals Scored (18)</span>
+                                            <span class="badge bg-danger rounded-pill">18</span>
+                                        </div>
+                                        <div class="progress" role="progressbar" aria-label="Goals Progress" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="height: 10px;">
+                                            <div class="progress-bar bg-danger rounded-pill" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Stat 2: Assists -->
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span class="fw-semibold text-dark">Assists (7)</span>
+                                            <span class="badge bg-primary rounded-pill">7</span>
+                                        </div>
+                                        <div class="progress" role="progressbar" aria-label="Assists Progress" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="height: 10px;">
+                                            <div class="progress-bar bg-primary rounded-pill" style="width: 70%"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Stat 3: Shots on Target % -->
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span class="fw-semibold text-dark">Shot Accuracy (65%)</span>
+                                            <span class="badge bg-success rounded-pill">65%</span>
+                                        </div>
+                                        <div class="progress" role="progressbar" aria-label="Accuracy Progress" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="height: 10px;">
+                                            <div class="progress-bar bg-success rounded-pill" style="width: 65%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="small text-muted mt-4">Silva has contributed to 60% of Lions FC's goals this season, making him the most valuable player in the tournament so far.</p>
+
+                                    <div class="d-grid mt-4">
+                                        <button class="btn btn-outline-dark fw-bold rounded-pill" type="button"><i class="bi bi-graph-up-arrow me-2"></i> Full Player Profile</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 8. FOOTER FIXED TO BOTTOM (Footer) -->
+    <footer class="bg-dark text-white fixed-bottom py-3 mt-5">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <!-- Left Section: Copyright -->
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small text-muted mb-0">
+                        &copy; 2025 Global Championship. | 
+                        <a href="#" class="text-decoration-none text-warning">Terms of Use</a> | 
+                        <a href="#" class="text-decoration-none text-warning">Privacy Policy</a>
+                    </p>
+                </div>
+                <!-- Right Section: Social/Info Links -->
+                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                    <a href="#" class="text-white-50 small me-3 text-decoration-none"><i class="bi bi-envelope me-1"></i> Contact Us</a>
+                    <a href="#" class="text-white-50 small me-3"><i class="bi bi-facebook fs-5"></i></a>
+                    <a href="#" class="text-white-50 small me-3"><i class="bi bi-twitter-x fs-5"></i></a>
+                    <a href="#" class="text-white-50 small"><i class="bi bi-instagram fs-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle CDN (including Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
