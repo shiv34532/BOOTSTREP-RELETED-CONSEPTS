@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SkyJet Airlines</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  </head>
+<body class="bg-light text-secondary">
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-primary bg-opacity-75 shadow-sm border-bottom border-light">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand text-white fw-bold d-flex align-items-center gap-2" href="#">
+                <i class="bi bi-airplane-engines"></i>
+                <span>SkyJet</span>
+            </a>
+
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navMenu">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link text-white" href="#home" data-translate="home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#flights" data-translate="flights">Flights</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#destinations" data-translate="destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#contact" data-translate="contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Language + Theme + Book -->
+            <div class="d-flex align-items-center gap-2">
+                <select id="langSelect" class="form-select form-select-sm w-auto">
+                    <option value="en" selected>English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                </select>
+
+                <button id="themeToggle" class="btn btn-light btn-sm">🌞 Light</button>
+                <a href="#book" class="btn btn-warning btn-sm fw-bold">✈️ Book Flight</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Single large banner (only image used on the page) -->
+    <header id="home" class="mt-0"></header>
+        <div class="position-relative" style="height:40vh; min-height:320px; margin-top:56px;">
+            <div class="w-100 h-100" style="background-image:url('https://png.pngtree.com/thumb_back/fh260/background/20230721/pngtree-d-render-of-a-lavish-private-jet-stationed-on-runway-with-image_3726117.jpg'); background-size:cover; background-position:center; background-repeat:no-repeat;"></div>
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column justify-content-center align-items-center text-center p-3">
+                <h1 class="text-white fw-bold display-4 m-0">Fly into the Future</h1>
+                <p class="text-white lead mt-2 mb-0">Next-generation air travel — comfort, speed, and innovation.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== FLIGHT SECTION ===== -->
+    <section id="flights" class="container py-5">
+        <h2 class="text-center text-primary mb-4" data-translate="popularRoutes">Our Popular Routes</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-img-top bg-secondary" style="height:200px; display:flex; align-items:center; justify-content:center; color:#fff;">New York → London</div>
+                    <div class="card-body">
+                        <h5 class="card-title">New York → London</h5>
+                        <p class="card-text" data-translate="route1">Experience our luxury SkyJet Class cabin with premium comfort.</p>
+                        <button class="btn btn-primary btn-sm" data-translate="viewDetails">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-img-top bg-secondary" style="height:200px; display:flex; align-items:center; justify-content:center; color:#fff;">Tokyo → Paris</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Tokyo → Paris</h5>
+                        <p class="card-text" data-translate="route2">High-speed transcontinental flight with advanced technology.</p>
+                        <button class="btn btn-primary btn-sm" data-translate="viewDetails">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-img-top bg-secondary" style="height:200px; display:flex; align-items:center; justify-content:center; color:#fff;">Dubai → Sydney</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Dubai → Sydney</h5>
+                        <p class="card-text" data-translate="route3">Enjoy long-distance comfort with AI-assisted cabin service.</p>
+                        <button class="btn btn-primary btn-sm" data-translate="viewDetails">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="container" class="text-white mt-5 pt-4 pb-3 bg-dark"></footer>
+        <div class="container">
+            <div class="row gy-3 ">
+                <div class="col-md-4 ">
+                    <h5 class="fw-bold ">SkyJet Airlines</h5>
+                    <p class="mb-0">Committed to safe, comfortable, and innovative air travel. Reach us for partnerships and media inquiries.</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h6 class="fw-bold">Quick Links</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a class="fw-bold text-decoration-none" href="#flights">Flights</a></li>
+                        <li><a class="fw-bold text-decoration-none" href="#destinations">Destinations</a></li>
+                        <li><a class="fw-bold text-decoration-none" href="#book">Book Flight</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h6 class="fw-bold">Contact</h6>
+                    <p class="mb-1">Email: gohelshivam983@gmail.com <a href="mailto:info@skyjet.example" class="text-white text-decoration-none">info@skyjet.example</a></p>
+                    <p class="mb-0">Phone:+91 9104678946 <a href="tel:+1234567890" class="text-white text-decoration-none">+1 (234) 567-890</a></p>
+                </div>
+            </div>
+
+            <hr class="border-light opacity-25 my-3">
+
+            <div class="d-flex text-white justify-content-between align-items-center small">
+                <div>© <span id="year"></span> SkyJet Airlines</div>
+                <div>
+                    <a href="#" class="text-white ms-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white ms-2"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="text-white ms-2"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and small scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // simple theme toggle (light/dark) updating data-bs-theme attribute
+        const themeBtn = document.getElementById('themeToggle');
+        themeBtn.addEventListener('click', () => {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-bs-theme') || 'light';
+            const next = current === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-bs-theme', next);
+            themeBtn.textContent = next === 'light' ? '🌞 Light' : '🌙 Dark';
+        });
+    </script>
+</body>

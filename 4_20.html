@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Business Analytics Story - Bootstrap 5.3 Demo</title>
+        <!-- Bootstrap CSS v5.3 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet" />
+    </head>
+    <body data-bs-spy="scroll" data-bs-target="#navbar-example"
+        data-bs-offset="100" tabindex="0" style="background: #fff8f0;">
+
+        <!-- Navigation / Scrollspy Menu -->
+        <nav id="navbar-example" class="navbar navbar-expand-lg sticky-top"
+            style="background: rgb(255, 0, 0);">
+            <div class="container-fluid">
+                <a class="navbar-brand text-warning fw-bold" href="#">Business
+                    Story</a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto fw-semibold">
+                        <li class="nav-item">
+                            <a class="nav-link text-warning"
+                                href="#history">History</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-warning"
+                                href="#modern">Modern Era</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-warning"
+                                href="#tools">Analytics Tools</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-warning"
+                                href="#future">Future</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Container -->
+        <div class="container py-5">
+
+            <!-- Section 1: History -->
+            <section id="history" class="mb-5 border border-3 rounded p-4">
+                <h2 class="text-danger fw-bold mb-3">The History of Business Analytics</h2>
+                <div class="row g-3">
+                    <div class="col-12 col-md-4">
+                        <img
+                            src="https://qqinfo.ro/wp-content/uploads/2022/02/The-Evolving-Landscape-of-BI.png"
+                            alt="History of Business Intelligence Infographic"
+                            class="img-fluid rounded mb-3 float-md-start"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            title="Business Intelligence Milestones Infographic">
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p>
+                            Business analytics has roots that trace back to ancient civilizations,
+                            where data was collected for agriculture and trade planning.
+                            The Industrial Revolution brought scientific management and
+                            data-driven optimization, pioneered by visionaries such as
+                            Henry Ford.
+                        </p>
+                        <p>
+                            By the mid-20th century, Decision Support Systems and data
+                            warehouses emerged, paving the way for more sophisticated
+                            data analysis and reporting in business.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Modern Era -->
+            <section id="modern" class="mb-5 border border-3 rounded p-4"
+                style="border-color: rgb(255, 204, 0); background-color: #fff0d6;">
+                <h2 class="text-danger fw-bold mb-3">The Modern Era of
+                    Analytics</h2>
+                <p>
+                    The late 20th century saw the rise of personal computing and
+                    early business intelligence tools, making analytics
+                    accessible to businesses of all sizes.
+                    With the explosion of data in the 21st century, big data
+                    technologies, cloud computing, and AI-powered analytics have
+                    transformed decision-making processes.
+                </p>
+                <div class="mb-3">
+                    <img
+                        src="https://365datascience.com/resources/blog/t7p1bodt1f-history-of-data-timeline.jpeg"
+                        alt="Evolution of Business Analytics"
+                        class="img-fluid rounded"
+                        data-bs-toggle="popover" data-bs-placement="right"
+                        title="Evolution of Business Analytics"
+                        data-bs-content="Business analytics evolved rapidly in the 21st century due to advances in technology, data storage, and computational power.">
+                </div>
+
+                <button class="btn btn-warning text-danger mb-3" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#analytics-collapse" aria-expanded="false"
+                    aria-controls="analytics-collapse">
+                    Learn More About Modern Analytics
+                </button>
+                <div class="collapse" id="analytics-collapse">
+                    <div class="card card-body bg-light border border-warning">
+                        Modern analytics includes predictive models, machine
+                        learning, and real-time dashboards that help businesses
+                        optimize operations, forecast trends, and enhance
+                        customer experience.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Tools & Techniques -->
+            <section id="tools" class="mb-5 border border-3 rounded p-4"
+                style="border-color: rgb(255, 204, 0); background-color: #fff0d6;">
+                <h2 class="text-danger fw-bold mb-3">Analytics Tools &
+                    Techniques</h2>
+                <p>
+                    A variety of tools and techniques are used in business
+                    analytics, including:
+                </p>
+                <ul>
+                    <li><strong>Data Warehouses</strong>: Centralized
+                        repositories of integrated data from multiple
+                        sources.</li>
+                    <li><strong>Decision Support Systems</strong>: Software
+                        systems to support business decision-making.</li>
+                    <li><strong>Predictive Analytics</strong>: Using statistical
+                        models and machine learning to predict future
+                        outcomes.</li>
+                    <li><strong>Data Visualization</strong>: Tools like Tableau
+                        and Power BI to present data insights visually.</li>
+                </ul>
+
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQwAAACUCAMAAABREOc7AAABDlBMVEX///8AQH4ANnn2+PoAPn3v8vUAPHyUobxYdp4AQn8ALHYANHjnAAAAGG0AL3b0+fo0Wo3+6+HQ2OP/hADJ0t7/cgW8ytwAInX/lFzo7PJFV4oQOXoADW7++vf90sLg5uz98fL/9e39w5Uvf5n/mWZfc5vveoOvuMpZkqezytT+uX2erMF/kq32uLX75uhto7L/0K/ubHdAT4gvhpsAAGlibZqKm7wyQ4PB2N2PuMATdJJIiaL/dxpXY5T/YQBzh6j/qm6jvsv/5NL/qFn/jgAAaIv+nT75fSmCrbtIZpQjToj/jVD+x7X9tpr917txe6H51dTtWWToABjpITT0paoAAFbqOUnoCib3xMfyj5M5IOFgAAAHbUlEQVR4nO2ajXuTOBjAGwihAUsrx6iUOTZnxQlu2vVjOze5eTtt8c56p6fn//+PXPjoNaFQZ721e9z72/OUtCmB/BrevIHVagAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDX8Y5ONn0KNwfv+GDTp3BzABkcICNHZpwcHySbTZ/Khth79su7+2lJvjhiHCcv47zyYnyxuTPbAHtPfnqQyagdnJ6eHj0+Yq8zBUf7jzd2YpuAk8GukzRmzK+S2yyjVgygIIOrBBlc5eZkKJ7nrP+oiQzurTfm0/GNyZBVw60razzgq2cpv17+khXucnXOQcrj/RcnacFb43klyKpmrFXGk59SLi8vs8Izru7gt58T9vf30+1v15KWKs3K7I7JkNYq492TlNeXr7PCK67u5Cjlxf6LcVqwruH4ymA6tSvq1i7j/l7CXRYz0sIeF0ZrspIgs5jRzErVzXjng6m5yvGVbZ0EFXVrl5FRmE1ErhJAzb4erzRwlDalfkXdzZDx5s1DLpBeSUYDt1aUgejNHhlbW/fWKeNmj4xbKqPppFHxKjJkb0mE/CFknGS3fvcevH5WKWP84ijZmF23WdnOV2Qopmk6NcWyF2ZRJiP2aw6rX+x1lQzFM6vTdCc9lGPbpjD5yfPJUK6aF0+OUxn3777iU09RBjt0sjGnoxVleEE0mUymahjTRrGJZDaJ1Cmrj4JihlsuwwmiQdJa6eGsvKkhxnXel+xHUZA1pQRRVD4WcxkFRBk55mBFGdZE0iWX6BJFqF/8TZgM5OqSRIihTwrjplSGNTUMSZJ0raMuHiroGBJx2eFiogsylKjR7mYfOAOtEZaeaKWMvYUPvZKR0ZxhtRMZ+RvxO2bMLGht9ocp3S6RQbHW1rU2RlIhVSmTYbV0itsMTIyFKTmQXOq2Na0hISqJMobGzI7TdY1FGU126ZwcHzTnl9DO24cpZ2dv7mWl33MRpufZg55p5pfMDLXXyWEdnRVHQpeUukF1GnieOUSkVAZqBabj+exbel1ovUSG12Xfor7n+THBbuG6cphubWJ7jlXXlsmQSmQ8PmZkL/kRd16eCWxt/ZFVBEmnzxmdnsr/8KFGMpgLivNyQxjtVpvqreysfYpKZWS/sBIT2hZ2LZHh64jEacnsYSkS22LajVDO9jS+UcbpeHw6Ph5fXFyc5B1893IrJRORFGYyzgeDwXn6EvDdCTU3gyCKSF4WZMh1HaF8TrbjZTJqHhtCEd/3RRlKZKBGXo4I6QiVTYO6eVyQA+0bZSSIMePuTsbZ2dvfsxI/qUxHC7ubdo6voVidvRHCeIz1af7BV2QodZ20hH0XZJgTguJhijrBuCdkPiaTEXJ7CjLCb5Yxo3w2WTa1emw2Kc3JZBY8h7kBvzyAzmSwHiAhDCzKsNilRNoZhqSPhKvK1hHNZ5iFkSHPR4ZXGkATZjLu7/KLVlFG/mxttTxDlpAxmwN9VCYD8TLw12Qg3OrOEWVIKA64PcVBdnUZu08fPa3MQIMw7Y050KtvaFTLwNgY5h0qGxlNbS5jaOB4+WVixaw1b45YaVA0GxlDYwUZzkH6jd1Hd57vzj8VZQzaafz21OkqI2MiSbMJ08clMuYjw5kQqbtchsdam1Sdg8fm03x+KZMhcTJK8rU5TMaj3flbUUZXb6VbZclt++oMVG1TN++t79Ltok9Ohq/RtsrLWpTRDDWqVab9LPXI07YkREQFrzgPziwIa98vYxnVMkwd4by7vk63i9VzGSrGCAttlOUZFM86XGv6hfTdb1DSyj5LZCiFutxiQGij6q5rSkHGy5dv/zcZtWCbEjeuR9GEItov1jbZbII69ag+Yim0ODBK0/FQY/nMRFXVsDVyi/l4rFHsxlEUtXAhZUkWBUhiSzVHRYhoS/tSkLGz84oLp98pg3XJZesOXSKILdSKtc0GZmeXLNQQydNHfs8FGXJkYIx1w9AJ0Ysy5JbBRhc7FGtTE2XUbCIRo9FvaETSlj8AOhRliFxJxrIbwvZkRDDLTzHtxQuVk16MsoS+uGitWMIHPYRd1hqhvcWVuMrm3nRNQEdqIVab3ZiyK5aO6pUu3j9N+PjnX39+TEuHXJ3nJ9gtdiGmpSVCvc7SRwWWGrLBq9plLTi2Gg6HYcn9iYqbO0oQdgeDbmiXzfSyrbIjhapdclPIDNRQXdaLR3dSPn/4Kyt85OqCv7f7/f62REk/2far7mInVM+6q7P2G8Ifn6d8+vwpK/zD1VnTRHLYwvGQFaLpdTxRW4as9huTdcrYPUx4//zO8/dpaTf50ArSfjezx2hJzEifqF3Hr78M2VJVf/3/ZleYTYIen5VcJYBeExv5l8ObKmMjgAwOkMExl6FYlmUOexHbzHKgrnHLZHz58GU3LZnno9Goc95hr+08PZn2KlfNPyaH7w+z1YgXsEXQ9HzKXmf3ZAqPB24bYsy45YAMDpDBEYxAxn/YYdX/jwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/HP8CCLD2yhWm+ZoAAAAASUVORK5CYII="
+                            alt="Tableau Logo" class="img-fluid rounded"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            title="Tableau: Data Visualization Tool">
+                    </div>
+                    <div class="col-md-4">
+                        <img
+                            src="data:image/png;base64,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"
+                            alt="Power BI Logo" class="img-fluid rounded"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            title="Microsoft Power BI: Business Analytics Tool">
+                    </div>
+                    <div class="col-md-4">
+                        <img
+                            src="data:image/png;base64,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"
+                            alt="Apache Spark Logo" class="img-fluid rounded"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            title="Apache Spark: Big Data Processing">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: The Future -->
+            <section id="future" class="mb-5 border border-3 rounded p-4"
+                style="border-color: rgb(255, 204, 0); background-color: #fff0d6;">
+                <h2 class="text-danger fw-bold mb-3">The Future of Business
+                    Analytics</h2>
+                <p>
+                    The future promises even more integration of artificial
+                    intelligence, real-time data streaming, and augmented
+                    analytics — making data insights faster, smarter, and more
+                    intuitive.
+                </p>
+
+                <img
+                    src="data:image/jpeg;base64,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"
+                    alt="Future of Analytics" class="img-fluid rounded"
+                    data-bs-toggle="popover" data-bs-placement="left"
+                    title="Future of Business Analytics"
+                    data-bs-content="AI and augmented analytics will revolutionize how businesses make data-driven decisions.">
+
+                <img
+                    src="data:image/jpeg;base64,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"
+                    title="Future of Business Analytics"
+                    data-bs-content="Illustration of Customer Data, User Data, Customer Analytic, User Personal Data, Costumer Statistic. Can be used for web, landing page, social media, mobile apps, animation, etc.">
+                
+                <p class="mt-3">
+                    Businesses that embrace these emerging technologies will
+                    gain a competitive edge by leveraging more precise
+                    forecasting, deeper customer insights, and automated
+                    decision-making capabilities.
+                </p>
+            </section>
+        </div>
+
+        <!-- Bootstrap JS Bundle (includes Popper) -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+    // Initialize Bootstrap Tooltips
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    tooltipTriggerList.map(el => new bootstrap.Tooltip(el))
+
+    // Initialize Bootstrap Popovers
+    const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    popoverTriggerList.map(el => new bootstrap.Popover(el))
+
+    // Enable Scrollspy on body
+    const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+      target: '#navbar-example',
+      offset: 100
+    })
+  </script>
+    </body>
+</html>
